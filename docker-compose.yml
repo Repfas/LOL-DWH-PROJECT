@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  dwh_postgres:
+    image: postgres:15
+    container_name: lol_dwh
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres098
+      POSTGRES_DB: lol_dwh
+    ports:
+      - "5434:5432"
+    volumes:
+      - dwh_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:  
+  dwh_data:

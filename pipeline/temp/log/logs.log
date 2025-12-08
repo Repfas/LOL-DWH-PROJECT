@@ -1,0 +1,89 @@
+2025-12-08 08:19:37,223 - INFO - EXTRACT DATA START:
+2025-12-08 08:19:40,702 - INFO - Local Extract SUCCESS in 3.48s
+2025-12-08 08:19:40,702 - INFO - [pid 1519] Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) done      Extract()
+2025-12-08 08:19:40,704 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-12-08 08:19:40,705 - INFO - Informed scheduler that task   Extract__99914b932b   has status   DONE
+2025-12-08 08:19:40,706 - DEBUG - Asking scheduler for work...
+2025-12-08 08:19:40,707 - DEBUG - Pending tasks: 2
+2025-12-08 08:19:40,709 - INFO - [pid 1519] Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) running   Load()
+2025-12-08 08:19:40,738 - INFO - Read Load Query - SUCCESS
+2025-12-08 08:19:41,425 - INFO - Read Extracted Data - SUCCESS
+2025-12-08 08:19:42,293 - INFO - Success connect to dwh
+2025-12-08 08:19:42,385 - INFO - lOAD DATA START:
+2025-12-08 08:19:43,709 - INFO - LOAD 'raw.match_data' - SUCCESS
+2025-12-08 08:19:43,816 - INFO - LOAD 'raw.champ' - SUCCESS
+2025-12-08 08:19:49,088 - INFO - LOAD 'raw.death_data' - SUCCESS
+2025-12-08 08:19:49,499 - INFO - LOAD 'raw.ban_data' - SUCCESS
+2025-12-08 08:19:49,515 - INFO - LOAD 'raw.role' - SUCCESS
+2025-12-08 08:19:49,516 - INFO - LOAD All Tables To DWH-raw - SUCCESS
+2025-12-08 08:19:49,537 - INFO - END LOAD
+2025-12-08 08:19:49,541 - INFO - [pid 1519] Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) done      Load()
+2025-12-08 08:19:49,542 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-12-08 08:19:49,545 - INFO - Informed scheduler that task   Load__99914b932b   has status   DONE
+2025-12-08 08:19:49,545 - DEBUG - Asking scheduler for work...
+2025-12-08 08:19:49,546 - DEBUG - Pending tasks: 1
+2025-12-08 08:19:49,548 - INFO - [pid 1519] Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) running   Transform()
+2025-12-08 08:19:49,556 - INFO - STARTING TRANSFORM DATA
+[0m01:20:36  Running with dbt=1.10.15
+[0m01:20:39  Registered adapter: postgres=1.9.1
+[0m01:21:16  Found 15 models, 60 data tests, 5 sources, 459 macros
+[0m01:21:16  
+[0m01:21:16  Concurrency: 1 threads (target='dev')
+[0m01:21:16  
+[0m01:21:29  1 of 15 START sql view model final.stg_ban ..................................... [RUN]
+[0m01:21:30  1 of 15 OK created sql view model final.stg_ban ................................ [[32mCREATE VIEW[0m in 0.55s]
+[0m01:21:30  2 of 15 START sql view model final.stg_champ ................................... [RUN]
+[0m01:21:30  2 of 15 OK created sql view model final.stg_champ .............................. [[32mCREATE VIEW[0m in 0.40s]
+[0m01:21:30  3 of 15 START sql view model final.stg_death ................................... [RUN]
+[0m01:21:30  3 of 15 OK created sql view model final.stg_death .............................. [[32mCREATE VIEW[0m in 0.29s]
+[0m01:21:30  4 of 15 START sql view model final.stg_match ................................... [RUN]
+[0m01:21:31  4 of 15 OK created sql view model final.stg_match .............................. [[32mCREATE VIEW[0m in 0.28s]
+[0m01:21:31  5 of 15 START sql view model final.stg_role .................................... [RUN]
+[0m01:21:31  5 of 15 OK created sql view model final.stg_role ............................... [[32mCREATE VIEW[0m in 0.26s]
+[0m01:21:31  6 of 15 START sql table model final_dim.dim_champions .......................... [RUN]
+[0m01:21:31  6 of 15 OK created sql table model final_dim.dim_champions ..................... [[32mSELECT 157[0m in 0.33s]
+[0m01:21:31  7 of 15 START sql table model final_dim.dim_match .............................. [RUN]
+[0m01:21:32  7 of 15 OK created sql table model final_dim.dim_match ......................... [[32mSELECT 3760[0m in 0.22s]
+[0m01:21:32  8 of 15 START sql table model final_dim.dim_players ............................ [RUN]
+[0m01:21:32  8 of 15 OK created sql table model final_dim.dim_players ....................... [[32mSELECT 706[0m in 0.32s]
+[0m01:21:32  9 of 15 START sql table model final_dim.dim_teams .............................. [RUN]
+[0m01:21:34  9 of 15 OK created sql table model final_dim.dim_teams ......................... [[32mSELECT 110[0m in 2.05s]
+[0m01:21:34  10 of 15 START sql table model final_dim.dim_role .............................. [RUN]
+[0m01:21:34  10 of 15 OK created sql table model final_dim.dim_role ......................... [[32mSELECT 5[0m in 0.16s]
+[0m01:21:34  11 of 15 START sql table model final_bridge.br_players_teams ................... [RUN]
+[0m01:21:46  11 of 15 OK created sql table model final_bridge.br_players_teams .............. [[32mSELECT 34927[0m in 12.09s]
+[0m01:21:46  12 of 15 START sql table model final_fct.fct_assist ............................ [RUN]
+[0m01:21:51  12 of 15 OK created sql table model final_fct.fct_assist ....................... [[32mSELECT 206778[0m in 4.76s]
+[0m01:21:51  13 of 15 START sql table model final_fct.fct_ban_pick .......................... [RUN]
+[0m01:21:54  13 of 15 OK created sql table model final_fct.fct_ban_pick ..................... [[32mSELECT 217370[0m in 2.65s]
+[0m01:21:54  14 of 15 START sql table model final_fct.fct_draft_pick ........................ [RUN]
+[0m01:21:54  14 of 15 OK created sql table model final_fct.fct_draft_pick ................... [[32mSELECT 34927[0m in 0.50s]
+[0m01:21:54  15 of 15 START sql table model final_fct.fct_kill_death_combat ................. [RUN]
+[0m01:21:56  15 of 15 OK created sql table model final_fct.fct_kill_death_combat ............ [[32mSELECT 77555[0m in 1.86s]
+[0m01:21:56  
+[0m01:21:56  Finished running 10 table models, 5 view models in 0 hours 0 minutes and 40.62 seconds (40.62s).
+[0m01:21:57  
+[0m01:21:57  [32mCompleted successfully[0m
+[0m01:21:57  
+[0m01:21:57  Done. PASS=15 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=15
+2025-12-08 08:22:00,949 - INFO - ENDING TRANSFORM DATA
+2025-12-08 08:22:00,950 - INFO - [pid 1519] Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) done      Transform()
+2025-12-08 08:22:00,954 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-12-08 08:22:00,956 - INFO - Informed scheduler that task   Transform__99914b932b   has status   DONE
+2025-12-08 08:22:00,958 - DEBUG - Asking scheduler for work...
+2025-12-08 08:22:00,961 - DEBUG - Done
+2025-12-08 08:22:00,964 - DEBUG - There are no more tasks to run at this time
+2025-12-08 08:22:00,965 - INFO - Worker Worker(salt=8054386773, workers=1, host=DESKTOP-O00VMAS, username=repfas, pid=1519) was stopped. Shutting down Keep-Alive thread
+2025-12-08 08:22:00,972 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 3 tasks of which:
+* 3 ran successfully:
+    - 1 Extract()
+    - 1 Load()
+    - 1 Transform()
+
+This progress looks :) because there were no failed tasks or missing dependencies
+
+===== Luigi Execution Summary =====
+

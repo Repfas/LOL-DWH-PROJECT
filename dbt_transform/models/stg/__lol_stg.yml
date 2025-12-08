@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    database: lol_dwh
+    schema: raw
+    description: "Raw layer from Luigi extract-load process"
+    tables:
+      - name: match_data
+      - name: ban_data
+      - name: death_data
+      - name: champ
+      - name: role

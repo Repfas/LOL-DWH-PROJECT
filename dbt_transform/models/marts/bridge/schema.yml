@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: br_players_teams
+    description: "Bridge table connecting matches, teams, players, champions, and roles for both blue and red sides."
+    columns:
+      - name: bridge_player_id
+        description: "Unique identifier for each player-match record."
+        tests:
+          - not_null
+          - unique
+
+      - name: match_history
+        description: "Raw match ID string used as natural key."
+        tests:
+          - not_null
+
+      - name: sk_match_id
+        description: "Surrogate key from dim_match."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_match')
+              field: sk_match_id
+
+      - name: sk_team_id
+        description: "Surrogate key from dim_teams."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_teams')
+              field: sk_team_id
+
+      - name: player_username
+        description: "Summoner/player username in the match."
+        tests:
+          - not_null
+
+      - name: sk_player_id
+        description: "Surrogate key from dim_players."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_players')
+              field: sk_player_id
+
+      - name: champion_use
+        description: "Champion name used by the player."
+
+      - name: sk_champion_id
+        description: "Surrogate key from dim_champions."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_champions')
+              field: sk_champion_id
+
+      - name: player_role
+        description: "Player’s role (top, jungle, middle, adc, support)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['top', 'jungle', 'middle', 'adc', 'support']
+
+      - name: sk_role_id
+        description: "Surrogate key from dim_role."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_role')
+              field: sk_role_id
+
+      - name: team_tag
+        description: "Unified team tag for either blue or red side."
+
+      - name: is_blue_team
+        description: "Boolean flag, TRUE if player belongs to blue team, FALSE otherwise."
+        tests:
+          - not_null

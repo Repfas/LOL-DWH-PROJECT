@@ -1,0 +1,94 @@
+[0m07:14:31.858243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bc698b2f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bc65f52e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bc65f7950>]}
+
+
+============================== 07:14:31.892589 | 41ee321b-32ff-49ab-ad9a-863e0ff75517 ==============================
+[0m07:14:31.892589 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:14:31.896561 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'no_print': 'None', 'log_path': 'logs', 'use_colors': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'invocation_command': 'dbt init', 'warn_error': 'None', 'debug': 'False', 'introspect': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_format': 'default', 'log_cache_events': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'target_path': 'None', 'profiles_dir': '/home/repfas/.dbt', 'empty': 'None', 'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False'}
+[0m07:20:41.960851 [debug] [MainThread]: Starter project path: /mnt/c/Users/UsEr/Documents/Belajar_Data_Engineer/lol-dwh/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m07:20:42.507302 [info ] [MainThread]: 
+Your new dbt project "dbt_transform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m07:20:42.509683 [info ] [MainThread]: Setting up your profile.
+[0m07:27:55.586102 [info ] [MainThread]: Profile dbt_transform written to /home/repfas/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m07:27:55.613545 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 763.6813, "process_in_blocks": "20632", "process_kernel_time": 2.512987, "process_mem_max_rss": "101976", "process_out_blocks": "8", "process_user_time": 3.456974}
+[0m07:27:55.616773 [debug] [MainThread]: Command `dbt init` succeeded at 07:27:55.616441 after 763.68 seconds
+[0m07:27:55.623164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bca1b72c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bc5e53f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x766bc5d35fd0>]}
+[0m07:27:55.627576 [debug] [MainThread]: Flushing usage events
+[0m07:27:57.791890 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:47:57.117157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d8ff61e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d6c46840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d7287830>]}
+
+
+============================== 19:47:57.148283 | 96e7dcdb-4d45-44f3-a36c-f87db0e2e242 ==============================
+[0m19:47:57.148283 [info ] [MainThread]: Running with dbt=1.10.15
+[0m19:47:57.152110 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'partial_parse': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'no_print': 'None', 'warn_error': 'None', 'static_parser': 'True', 'empty': 'False', 'write_json': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'log_path': 'logs', 'profiles_dir': '/home/repfas/.dbt', 'fail_fast': 'False', 'target_path': 'None', 'debug': 'False'}
+[0m19:47:57.157045 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /mnt/c/Users/UsEr/Documents/Belajar_Data_Engineer/lol-dwh/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:47:57.173517 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.22599082, "process_in_blocks": "17616", "process_kernel_time": 3.530119, "process_mem_max_rss": "97800", "process_out_blocks": "0", "process_user_time": 4.071099}
+[0m19:47:57.176653 [debug] [MainThread]: Command `dbt run` failed at 19:47:57.176448 after 0.23 seconds
+[0m19:47:57.178362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d6952f00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d65e2240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76b0d707d0a0>]}
+[0m19:47:57.180401 [debug] [MainThread]: Flushing usage events
+[0m19:47:59.156981 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:50:05.285070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0ae15f4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0adeaf1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0ae2f59a0>]}
+
+
+============================== 19:50:05.306121 | 9b89d4d4-8ef3-4236-95b5-7707ef7d29e7 ==============================
+[0m19:50:05.306121 [info ] [MainThread]: Running with dbt=1.10.15
+[0m19:50:05.308821 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'invocation_command': 'dbt run', 'profiles_dir': '/home/repfas/.dbt', 'quiet': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'printer_width': '80', 'log_format': 'default', 'fail_fast': 'False', 'warn_error': 'None', 'version_check': 'True', 'introspect': 'True', 'target_path': 'None', 'no_print': 'None', 'write_json': 'True', 'use_colors': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False'}
+[0m19:50:05.311097 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /mnt/c/Users/UsEr/Documents/Belajar_Data_Engineer/lol-dwh/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:50:05.323101 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.15908706, "process_in_blocks": "28656", "process_kernel_time": 2.757015, "process_mem_max_rss": "97828", "process_out_blocks": "0", "process_user_time": 3.58146}
+[0m19:50:05.324893 [debug] [MainThread]: Command `dbt run` failed at 19:50:05.324705 after 0.16 seconds
+[0m19:50:05.326811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0ad6fac00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0adfaeba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0aed3efc0>]}
+[0m19:50:05.331938 [debug] [MainThread]: Flushing usage events
+[0m19:50:06.885181 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:59:27.125298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f4648170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f3fba570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f4578830>]}
+
+
+============================== 20:59:27.145911 | 5334962c-8ae1-4a5e-b3fa-67e0baf54de7 ==============================
+[0m20:59:27.145911 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:59:27.148474 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'partial_parse': 'True', 'printer_width': '80', 'quiet': 'False', 'cache_selected_only': 'False', 'log_path': 'logs', 'empty': 'False', 'fail_fast': 'False', 'log_format': 'default', 'no_print': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'debug': 'False', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run', 'profiles_dir': '/home/repfas/.dbt', 'use_colors': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'version_check': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m20:59:27.151031 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /mnt/c/Users/UsEr/Documents/Belajar_Data_Engineer/lol-dwh/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:59:27.162649 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.14902578, "process_in_blocks": "10912", "process_kernel_time": 2.328903, "process_mem_max_rss": "97636", "process_out_blocks": "0", "process_user_time": 2.913157}
+[0m20:59:27.164729 [debug] [MainThread]: Command `dbt run` failed at 20:59:27.164423 after 0.15 seconds
+[0m20:59:27.166985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f7b432c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f359bd70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c29f4a30c50>]}
+[0m20:59:27.169292 [debug] [MainThread]: Flushing usage events
+[0m20:59:28.984362 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:58:31.439915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584b7d2180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584b7678f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584b765430>]}
+
+
+============================== 18:58:31.499285 | f4157127-78b8-452a-bd01-f34c1d2f12b3 ==============================
+[0m18:58:31.499285 [info ] [MainThread]: Running with dbt=1.10.15
+[0m18:58:31.503855 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'partial_parse': 'True', 'warn_error': 'None', 'introspect': 'True', 'profiles_dir': '/home/repfas/.dbt', 'quiet': 'False', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'empty': 'None', 'version_check': 'True', 'debug': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'use_experimental_parser': 'False', 'use_colors': 'True', 'invocation_command': 'dbt test', 'target_path': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'static_parser': 'True'}
+[0m18:58:31.512040 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /mnt/c/Users/UsEr/Documents/Belajar_Data_Engineer/lol-dwh/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:58:31.536379 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.33404604, "process_in_blocks": "31752", "process_kernel_time": 4.26853, "process_mem_max_rss": "97792", "process_out_blocks": "0", "process_user_time": 5.60322}
+[0m18:58:31.540676 [debug] [MainThread]: Command `dbt test` failed at 18:58:31.540373 after 0.35 seconds
+[0m18:58:31.543718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584d38ab70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584f35f290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73584c003470>]}
+[0m18:58:31.547360 [debug] [MainThread]: Flushing usage events
+[0m18:58:34.888451 [debug] [MainThread]: An error was encountered while trying to flush usage events

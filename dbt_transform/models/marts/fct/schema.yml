@@ -1,0 +1,118 @@
+version: 2
+
+models:
+  - name: fct_draft_pick
+    description: "Fact table for champion picks during the draft phase. Each row represents a single player picking a champion in a specific match."
+    columns:
+      - name: sk_match_id
+        description: "Surrogate key referencing dim_match."
+        tests:
+          - not_null
+      - name: sk_team_id
+        description: "Surrogate key referencing dim_teams."
+        tests:
+          - not_null
+      - name: sk_player_id
+        description: "Surrogate key referencing dim_players."
+        tests:
+          - not_null
+      - name: sk_champion_id
+        description: "Surrogate key referencing dim_champions."
+        tests:
+          - not_null
+      - name: sk_role_id
+        description: "Surrogate key referencing dim_role."
+        tests:
+          - not_null
+      - name: is_blue_side
+        description: "Boolean flag indicating whether the pick was made by the blue team."
+      - name: pick_order
+        description: "Order number of the champion pick within the draft."
+
+  - name: fct_draft_banned
+    description: "Fact table for champion bans during the draft phase. Each row represents a champion banned by a team in a match."
+    columns:
+      - name: sk_match_id
+        description: "Surrogate key referencing dim_match."
+        tests:
+          - not_null
+      - name: sk_team_id
+        description: "Surrogate key referencing dim_teams."
+        tests:
+          - not_null
+      - name: sk_champion_id
+        description: "Surrogate key referencing dim_champions."
+        tests:
+          - not_null
+      - name: is_blue_side
+        description: "Boolean flag indicating whether the banning team was on the blue side."
+      - name: ban_order
+        description: "Order number of the champion ban within the draft."
+
+  - name: fct_kill_death_combat
+    description: "Fact table for kill and death combat events. Each row represents one kill event, including both killer and victim details."
+    columns:
+      - name: sk_match_id
+        description: "Surrogate key referencing dim_match."
+        tests:
+          - not_null
+      - name: event_time
+        description: "Timestamp of the combat event within the match."
+      - name: killer_team_id
+        description: "Surrogate key referencing dim_teams for the killer's team."
+        tests:
+          - not_null
+      - name: killer_player_id
+        description: "Surrogate key referencing dim_players for the killer."
+        tests:
+          - not_null
+      - name: killer_champion_id
+        description: "Surrogate key referencing dim_champions for the killer's champion."
+        tests:
+          - not_null
+      - name: killer_role_id
+        description: "Surrogate key referencing dim_role for the killer's role."
+        tests:
+          - not_null
+      - name: victim_team_id
+        description: "Surrogate key referencing dim_teams for the victim's team."
+        tests:
+          - not_null
+      - name: victim_player_id
+        description: "Surrogate key referencing dim_players for the victim."
+        tests:
+          - not_null
+      - name: victim_champion_id
+        description: "Surrogate key referencing dim_champions for the victim's champion."
+        tests:
+          - not_null
+      - name: victim_role_id
+        description: "Surrogate key referencing dim_role for the victim's role."
+        tests:
+          - not_null
+
+  - name: fct_assist
+    description: "Fact table for player assist events. Each row represents one assist made by a player during a combat event in a match."
+    columns:
+      - name: sk_match_id
+        description: "Surrogate key referencing dim_match."
+        tests:
+          - not_null
+      - name: event_time
+        description: "Timestamp of the assist event."
+      - name: assist_team_id
+        description: "Surrogate key referencing dim_teams for the assisting player's team."
+        tests:
+          - not_null
+      - name: assist_player_id
+        description: "Surrogate key referencing dim_players for the assisting player."
+        tests:
+          - not_null
+      - name: assist_champion_id
+        description: "Surrogate key referencing dim_champions for the assisting player's champion."
+        tests:
+          - not_null
+      - name: assist_role_id
+        description: "Surrogate key referencing dim_role for the assisting player's role."
+        tests:
+          - not_null

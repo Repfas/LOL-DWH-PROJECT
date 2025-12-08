@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: dim_champions
+    description: "Dimension table for all League of Legends champions."
+    columns:
+      - name: sk_champion_id
+        description: "Surrogate key for each champion."
+        tests:
+          - unique
+          - not_null
+      - name: champion_name
+        description: "Champion name."
+        tests:
+          - unique
+          - not_null
+      - name: champion_class
+        description: "Champion class type."
+      - name: champion_playstyle
+        description: "Champion primary playstyle."
+      - name: champion_desc
+        description: "Champion description or title."
+
+  - name: dim_role
+    description: "Dimension table for champion or player roles."
+    columns:
+      - name: sk_role_id
+        description: "Surrogate key for each role."
+        tests:
+          - unique
+          - not_null
+      - name: nk_role_id
+        description: "Natural key for each role."
+        tests:
+          - unique
+          - not_null
+      - name: role
+        description: "Role name."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_match
+    description: "Dimension table for match metadata."
+    columns:
+      - name: sk_match_id
+        description: "Surrogate key for each match."
+        tests:
+          - unique
+          - not_null
+      - name: match_history
+        description: "Unique match history identifier."
+        tests:
+          - unique
+          - not_null
+      - name: season
+        description: "Season of the match."
+      - name: year
+        description: "Year of the match."
+      - name: is_blue_team_win
+        description: "Boolean flag indicating if the blue team won."
+        tests:
+          - not_null
+      - name: winner_team
+        description: "Tag of the winning team."
+        tests:
+          - not_null
+
+  - name: dim_players
+    description: "Dimension table for all players."
+    columns:
+      - name: sk_player_id
+        description: "Surrogate key for each player."
+        tests:
+          - unique
+          - not_null
+      - name: player_username
+        description: "Player username or summoner name."
+        tests:
+          - unique
+          - not_null
+      - name: primary_role
+        description: "Primary role that the player usually plays."
+
+  - name: dim_teams
+    description: "Dimension table for all teams participating in matches."
+    columns:
+      - name: sk_team_id
+        description: "Surrogate key for each team."
+        tests:
+          - unique
+          - not_null
+      - name: team_tag
+        description: "Short team tag or abbreviation."
+        tests:
+          - unique
+          - not_null
